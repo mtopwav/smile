@@ -1,0 +1,501 @@
+.about {
+  --about-max: var(--max-width);
+  --about-radius: var(--radius);
+  --about-radius-lg: var(--radius-lg);
+  --about-shadow: var(--shadow-md);
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-primary);
+}
+
+.about *,
+.about *::before,
+.about *::after {
+  box-sizing: border-box;
+}
+
+.about-label {
+  display: inline-block;
+  color: var(--color-secondary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* Hero entrance */
+@keyframes aboutHeroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aboutHeroZoom {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.about-hero__img {
+  animation: aboutHeroZoom 1.4s ease-out forwards;
+}
+
+.about-hero__overlay {
+  animation: aboutHeroOverlay 1s ease-out forwards;
+}
+
+@keyframes aboutHeroOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.72;
+  }
+}
+
+.about-hero__item {
+  opacity: 0;
+  animation: aboutHeroFadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.about-hero__content .about-label {
+  animation-delay: 0.15s;
+}
+
+.about-hero__content h1 {
+  animation-delay: 0.3s;
+}
+
+.about-hero__lead {
+  animation-delay: 0.5s;
+}
+
+.reveal--visible .about-commit__logo-wrap {
+  animation: aboutLogoFloat 4s ease-in-out infinite;
+}
+
+@keyframes aboutLogoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.about-mission-card,
+.about-pillar {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.about-cta .home-btn {
+  transition: transform 0.25s ease, background 0.2s, box-shadow 0.25s ease;
+}
+
+.about-cta .home-btn:hover {
+  transform: translateY(-3px);
+}
+
+.about-cta .home-btn--primary:hover {
+  box-shadow: 0 8px 20px rgba(47, 134, 214, 0.4);
+}
+
+.about-footer {
+  animation: aboutFooterIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes aboutFooterIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-hero__img,
+  .about-hero__overlay,
+  .about-hero__item,
+  .reveal--visible .about-commit__logo-wrap,
+  .about-footer {
+    animation: none;
+  }
+}
+
+/* Page hero */
+.about-hero {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: var(--color-white);
+}
+
+.about-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-primary);
+  opacity: 0.72;
+  z-index: 1;
+}
+
+.about-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--about-max);
+  margin: 0 auto;
+  width: 100%;
+  padding: 3.5rem 1.5rem;
+}
+
+.about-hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.about-hero__lead {
+  margin: 0;
+  max-width: 36rem;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  opacity: 0.92;
+}
+
+/* Sections */
+.about-section {
+  padding: 4.5rem 1.5rem;
+}
+
+.about-section--warm {
+  background: var(--color-warm);
+}
+
+.about-section--white {
+  background: var(--color-white);
+}
+
+.about-section--cta {
+  padding-bottom: 5rem;
+}
+
+.about-section__inner {
+  max-width: var(--about-max);
+  margin: 0 auto;
+}
+
+.about-section__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+
+.about-section__header h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.about-section__header p {
+  margin: 0;
+  line-height: 1.65;
+  opacity: 0.85;
+}
+
+/* Story split */
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-story__media {
+  border-radius: var(--about-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--about-shadow);
+  height: 100%;
+}
+
+.reveal.about-story__media,
+.reveal.about-story__content {
+  height: fit-content;
+}
+
+.about-story__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-story__content h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.about-story__content p {
+  margin: 0 0 1rem;
+  line-height: 1.75;
+  opacity: 0.88;
+}
+
+.about-story__content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Mission grid */
+.about-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.about-mission-grid > .reveal {
+  height: 100%;
+}
+
+.about-mission-grid .about-mission-card {
+  height: 100%;
+}
+
+.about-mission-card {
+  background: var(--color-white);
+  border-radius: var(--about-radius);
+  padding: 2rem;
+  box-shadow: var(--about-shadow);
+}
+
+.about-mission-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  color: var(--color-secondary);
+}
+
+.about-mission-card p {
+  margin: 0;
+  line-height: 1.65;
+  opacity: 0.88;
+}
+
+.about-mission-card--accent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(
+    145deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  color: var(--color-white);
+}
+
+.about-mission-card--accent p {
+  margin-top: 1.25rem;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+/* Pillars */
+.about-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.about-pillars > .reveal {
+  height: 100%;
+}
+
+.about-pillars .about-pillar {
+  height: 100%;
+}
+
+.about-pillar {
+  background: var(--color-background);
+  border-radius: var(--about-radius);
+  padding: 2rem;
+  border-left: 4px solid var(--color-secondary);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.reveal--visible .about-pillar:hover,
+.reveal--visible .about-mission-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(17, 78, 138, 0.16);
+}
+
+.about-pillar h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.about-pillar p {
+  margin: 0;
+  line-height: 1.65;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* Commitments */
+.about-commit {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-commit__content h2 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+}
+
+.about-commit__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-commit__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.about-commit__list li svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: var(--color-secondary);
+  margin-top: 2px;
+}
+
+.about-commit__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* CTA */
+.about-cta {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--about-radius-lg);
+  padding: 3rem 2.5rem;
+  text-align: center;
+}
+
+.about-cta h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.about-cta p {
+  margin: 0 auto 1.75rem;
+  max-width: 520px;
+  line-height: 1.65;
+  opacity: 0.9;
+}
+
+.about-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.about-cta .home-btn--primary {
+  background: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.about-cta .home-btn--primary:hover {
+  background: var(--color-warm);
+  color: var(--color-primary);
+}
+
+.about-cta__outline {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  color: var(--color-white) !important;
+}
+
+.about-cta__outline:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: var(--color-white) !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-story,
+  .about-commit {
+    grid-template-columns: 1fr;
+  }
+
+  .about-story__media {
+    order: -1;
+  }
+
+  .about-mission-grid,
+  .about-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .about-commit__logo {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-hero {
+    min-height: 280px;
+  }
+
+  .about-hero__content {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .about-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-cta {
+    padding: 2rem 1.5rem;
+  }
+}
