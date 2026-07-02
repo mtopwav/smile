@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import slide95 from '../assets/images/BEAN LIGHT_95.JPG';
 import logoImg from '../assets/images/logo.png';
+import SiteSeo from '../components/SiteSeo';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 import DonationAmountPicker from '../components/DonationAmountPicker';
 import DonationForm from '../components/DonationForm';
@@ -104,6 +105,11 @@ function Donation() {
 
   return (
     <div className="donation">
+      <SiteSeo
+        title="Donate"
+        description="Donate to Let Me Smile — support Beamlight School and inclusive education for children in Arusha, Tanzania."
+        path="/donation"
+      />
       <SiteHeader />
 
       <main id="top">
@@ -299,7 +305,7 @@ function Donation() {
                   <Link to="/about">About us</Link>
                 </li>
                 <li>
-                  <Link to="/#programs">Programs</Link>
+                  <Link to="/programs">Programs</Link>
                 </li>
                 <li>
                   <Link to="/#stories">Impact stories</Link>
@@ -316,7 +322,7 @@ function Donation() {
                   <Link to="/about">Volunteer</Link>
                 </li>
                 <li>
-                  <a href="mailto:hello@letmesmile.org">Partner with us</a>
+                  <a href="mailto:letmesmilebms@gmail.com">Partner with us</a>
                 </li>
               </ul>
             </div>
@@ -324,10 +330,16 @@ function Donation() {
               <h4>Contact</h4>
               <ul>
                 <li>
-                  <a href="mailto:hello@letmesmile.org">hello@letmesmile.org</a>
+                  <a href="mailto:letmesmilebms@gmail.com">letmesmilebms@gmail.com</a>
                 </li>
                 <li>
-                  <a href="tel:+255000000000">+255 7XX XXX XXX</a>
+                  <a href="tel:+255755033573">+255 755 033 573</a>
+                </li>
+                <li>
+                  <a href="tel:+255755953904">+255 755 953 904</a>
+                </li>
+                <li>
+                  <a href="tel:+255628703904">+255 628 703 904</a>
                 </li>
               </ul>
             </div>

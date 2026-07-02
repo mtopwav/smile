@@ -48,6 +48,11 @@
   display: block;
 }
 
+.home-logo__img--sm {
+  width: 28px;
+  height: 28px;
+}
+
 .home-logo__img--md {
   width: 44px;
   height: 44px;
@@ -273,6 +278,15 @@
 
 .home-hero h1 em {
   font-style: normal;
+  color: var(--color-warm);
+}
+
+.home-hero__brand {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--color-warm);
 }
 
@@ -516,13 +530,153 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.5rem;
+  position: relative;
 }
 
-.reveal--visible .home-about__logo-wrap {
-  animation: homeLogoFloat 4s ease-in-out infinite;
+/* Decorative glow ring behind the portrait */
+.home-about__image::before {
+  content: '';
+  position: absolute;
+  width: 85%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(47, 134, 214, 0.12) 0%,
+    rgba(47, 134, 214, 0.04) 50%,
+    transparent 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
+.home-about__portrait {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  z-index: 1;
+  /* Gradient border frame */
+  padding: 4px;
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    var(--color-primary) 40%,
+    var(--color-secondary) 70%,
+    var(--color-warm) 100%
+  );
+  box-shadow:
+    0 12px 40px rgba(17, 78, 138, 0.18),
+    0 4px 12px rgba(47, 134, 214, 0.1);
+  animation: homePortraitFloat 6s ease-in-out infinite;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s ease;
+}
+
+.home-about__portrait:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 20px 56px rgba(17, 78, 138, 0.22),
+    0 8px 20px rgba(47, 134, 214, 0.15);
+}
+
+@keyframes homePortraitFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Inner wrapper clips the image and badge inside the gradient border */
+.home-about__portrait-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius-lg) - 4px);
+  object-fit: cover;
+}
+
+/* Decorative corner dots */
+.home-about__portrait::before,
+.home-about__portrait::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-warm);
+  z-index: 3;
+  opacity: 0.85;
+}
+
+.home-about__portrait::before {
+  top: -5px;
+  right: 24px;
+}
+
+.home-about__portrait::after {
+  bottom: -5px;
+  left: 24px;
+}
+
+/* Glassmorphism name badge */
+.home-about__portrait-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(17, 78, 138, 0.65);
+  backdrop-filter: blur(16px) saturate(1.6);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  border-radius: calc(var(--radius-lg) - 8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+  z-index: 2;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.home-about__portrait:hover .home-about__portrait-badge {
+  background: rgba(17, 78, 138, 0.78);
+  transform: translateY(-2px);
+}
+
+.home-about__portrait-badge .home-logo__img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.home-about__portrait-name {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.home-about__portrait-role {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.8;
+  letter-spacing: 0.02em;
+}
+
+/* Keep the legacy keyframe alias for other potential references */
 @keyframes homeLogoFloat {
   0%,
   100% {
@@ -670,8 +824,8 @@
   .home-hero__bg::after,
   .home-hero__slide--active,
   .home-stat,
-  .reveal--visible .home-about__logo-wrap,
-  .home-footer--animate {
+  .home-footer--animate,
+  .home-about__portrait {
     animation: none;
     opacity: 1;
     transform: none;

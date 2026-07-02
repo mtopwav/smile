@@ -1,11 +1,12 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Let Me Smile",
+  "name": "Let Me Smile — NGO | Arusha, Tanzania",
+  "description": "Inclusive education and community outreach for children in Arusha, Tanzania.",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "32x32"
     },
     {
       "src": "logo192.png",
@@ -18,7 +19,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://letmesmile.or.tz/",
+  "scope": "https://letmesmile.or.tz/",
   "display": "standalone",
   "theme_color": "#114E8A",
   "background_color": "#F8F9FB"

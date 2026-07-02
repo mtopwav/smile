@@ -328,6 +328,68 @@
   font-weight: 500;
 }
 
+/* Team */
+.about-team {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.about-team-card {
+  height: 100%;
+  background: var(--color-background);
+  border-radius: var(--about-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--about-shadow);
+  transition: box-shadow 0.35s ease;
+}
+
+.about-team-card:hover {
+  box-shadow: 0 12px 32px rgba(17, 78, 138, 0.16);
+}
+
+.about-team-card__photo {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--color-white);
+  line-height: 0;
+}
+
+.about-team-card--featured .about-team-card__photo {
+  aspect-ratio: 4 / 5;
+}
+
+.about-team-card__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about-team-card--featured .about-team-card__photo img {
+  object-position: center 12%;
+}
+
+.about-team-card__body {
+  padding: 1.25rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.about-team-card__body h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.about-team-card__body p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
 /* Pillars */
 .about-pillars {
   display: grid;
@@ -477,6 +539,10 @@
     grid-template-columns: 1fr;
   }
 
+  .about-team {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .about-commit__logo {
     order: -1;
   }
@@ -497,5 +563,9 @@
 
   .about-cta {
     padding: 2rem 1.5rem;
+  }
+
+  .about-team {
+    grid-template-columns: 1fr;
   }
 }

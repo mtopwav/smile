@@ -14,7 +14,7 @@ const Logo = ({ className = '', size = 'md' }) => (
 const NAV_ITEMS = [
   { label: 'Home', to: '/', exact: true },
   { label: 'About', to: '/about' },
-  { label: 'Programs', to: '/', hash: '#programs' },
+  { label: 'Programs', to: '/programs' },
   { label: 'Stories', to: '/', hash: '#stories' },
   { label: 'Donate', to: '/donation', hash: '#donate-form', cta: true },
 ];

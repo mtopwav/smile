@@ -1,49 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-TZ">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/logo192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#114E8A" />
     <meta
       name="description"
-      content="Let me Smile — an NGO bringing care, education, and hope to children and communities."
+      content="Let Me Smile — NGO in Arusha, Tanzania. Inclusive education, Beamlight School, and community outreach for children. Find Let Me Smile online at letmesmile.or.tz."
     />
+    <meta
+      name="keywords"
+      content="Let Me Smile, Let me Smile, letmesmile, Beamlight School, NGO Tanzania, Arusha NGO, inclusive education Tanzania, charity Arusha"
+    />
+    <meta name="author" content="Let Me Smile" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://letmesmile.or.tz/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://letmesmile.or.tz/" />
+    <meta property="og:site_name" content="Let Me Smile" />
+    <meta property="og:title" content="Let Me Smile — NGO | Arusha, Tanzania" />
+    <meta
+      property="og:description"
+      content="Let Me Smile offers inclusive education through Beamlight School and community programs in Arusha, Tanzania."
+    />
+    <meta property="og:image" content="https://letmesmile.or.tz/logo512.png" />
+    <meta property="og:locale" content="en_TZ" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Let Me Smile — NGO | Arusha, Tanzania" />
+    <meta
+      name="twitter:description"
+      content="Let Me Smile — inclusive education and outreach for children in Arusha, Tanzania."
+    />
+    <meta name="twitter:image" content="https://letmesmile.or.tz/logo512.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "NGO",
+            "@id": "https://letmesmile.or.tz/#organization",
+            "name": "Let Me Smile",
+            "alternateName": ["Let me Smile", "Let Me Smile NGO", "Beamlight School", "letmesmile.or.tz"],
+            "url": "https://letmesmile.or.tz",
+            "logo": "https://letmesmile.or.tz/logo512.png",
+            "email": "letmesmilebms@gmail.com",
+            "description": "Let Me Smile is an NGO in Arusha, Tanzania providing inclusive education through Beamlight School and community outreach for children.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Arusha",
+              "addressCountry": "TZ"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Tanzania"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://letmesmile.or.tz/#website",
+            "url": "https://letmesmile.or.tz",
+            "name": "Let Me Smile",
+            "publisher": { "@id": "https://letmesmile.or.tz/#organization" },
+            "inLanguage": "en-TZ"
+          }
+        ]
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Let me Smile — NGO</title>
+    <title>Let Me Smile — NGO | Arusha, Tanzania</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <h1>Let Me Smile</h1>
+      <p>
+        Let Me Smile is a non-governmental organization in Arusha, Tanzania. We provide
+        inclusive education through Beamlight School and community outreach for children
+        and families.
+      </p>
+      <nav aria-label="Main">
+        <a href="https://letmesmile.or.tz/">Home</a> |
+        <a href="https://letmesmile.or.tz/about">About</a> |
+        <a href="https://letmesmile.or.tz/programs">Programs</a> |
+        <a href="https://letmesmile.or.tz/donation">Donate</a>
+      </nav>
+    </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

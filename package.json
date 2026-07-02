@@ -1,7 +1,8 @@
 {
-  "name": "smile",
+  "name": "letmesmile",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://letmesmile.or.tz",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -16,6 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "compress-images": "node scripts/compress-images.mjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -36,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "sharp": "^0.35.2"
   }
 }

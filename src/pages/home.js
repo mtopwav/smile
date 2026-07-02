@@ -5,6 +5,8 @@ import slide47 from '../assets/images/BEAN LIGHT_47.JPG';
 import slide55 from '../assets/images/BEAN LIGHT_55.JPG';
 import slide95 from '../assets/images/BEAN LIGHT_95.JPG';
 import logoImg from '../assets/images/logo.png';
+import madamImg from '../assets/images/madam.jpg';
+import SiteSeo from '../components/SiteSeo';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 import SiteHeader from '../components/SiteHeader';
 import './home.css';
@@ -174,6 +176,10 @@ function Home() {
 
   return (
     <div className="home">
+      <SiteSeo
+        description="Let Me Smile — NGO in Arusha, Tanzania. Inclusive education, Beamlight School, and community outreach so every child can learn and thrive."
+        path="/"
+      />
       <SiteHeader />
 
       <main id="top">
@@ -190,20 +196,21 @@ function Home() {
           </div>
           <div className="home-hero__inner">
             <div className="home-hero__content">
+              <p className="home-hero__item home-hero__brand">Let Me Smile</p>
               <h1 id="hero-heading" className="home-hero__item">
                 Every child deserves a reason to <em>smile</em>
               </h1>
               <p className="home-hero__item home-hero__lead">
-                Let me Smile partners with communities to deliver care, education, and
-                hope—so children and families can thrive with dignity and joy.
+                Let Me Smile partners with communities to deliver care, education, and
+                hope—so children and families in Arusha, Tanzania can thrive with dignity and joy.
               </p>
               <div className="home-hero__item home-hero__actions">
                 <a href="#get-involved" className="home-btn home-btn--primary">
                   Support our mission
                 </a>
-                <a href="#programs" className="home-btn home-btn--outline">
+                <Link to="/programs" className="home-btn home-btn--outline">
                   See our programs
-                </a>
+                </Link>
               </div>
             </div>
             <div className="home-hero__visual home-hero__item home-hero__item--card">
@@ -257,11 +264,26 @@ function Home() {
 
         <section id="about" className="home-section home-section--warm">
           <div className="home-section__inner home-about">
-            <AnimateOnScroll variant="left" className="home-about__image">
-              <div className="home-about__logo-wrap">
-                <Logo size="xl" />
+            <div className="home-about__image">
+              <div className="home-about__portrait">
+                <img
+                  src={madamImg}
+                  alt="Let Me Smile founder"
+                  className="home-about__portrait-img"
+                  width={800}
+                  height={1000}
+                  decoding="async"
+                  fetchPriority="high"
+                />
+                <div className="home-about__portrait-badge">
+                  <Logo size="sm" />
+                  <div>
+                    <p className="home-about__portrait-name">Selina P. Kaaya</p>
+                    <p className="home-about__portrait-role">Founder, Let Me Smile</p>
+                  </div>
+                </div>
               </div>
-            </AnimateOnScroll>
+            </div>
             <AnimateOnScroll variant="right" delay={120} className="home-about__content">
               <span className="home-section__label">Who we are</span>
               <h2>A movement built on empathy</h2>
@@ -322,19 +344,36 @@ function Home() {
               <AnimateOnScroll variant="left" delay={0}>
                 <figure className="home-story">
                   <blockquote>
-                    &ldquo;When the outreach team visited our village, my daughter received
-                    care we could never afford. Today she laughs without holding back.&rdquo;
+                    &ldquo;I have met Selena through her school in arusha. 
+                    She has the greatest passion I have ever seen toward the kids 
+                    and specially the ones with neurological difficulties. 
+                    She puts her heart into teaching and helping those kids and 
+                    it was very inspiring to witness that and to actually see the 
+                    result with those kids becoming better and getting the care they 
+                    need and deserve!&rdquo;
                   </blockquote>
-                  <cite>— Amina, caregiver, Eastern region</cite>
+                  <cite>— Nardeencoaching</cite>
                 </figure>
               </AnimateOnScroll>
               <AnimateOnScroll variant="right" delay={120}>
                 <figure className="home-story">
                   <blockquote>
-                    &ldquo;Volunteering with Let me Smile showed me how small acts—reading,
-                    mentoring, listening—can reopen a child&apos;s world.&rdquo;
+                    &ldquo;What a wonderful school this is. So much love for the students, 
+                    and it is absolutely fantastic that they are an inclusion school. 
+                    Tailored support is provided for children with disabilities. 
+                    Some students with disabilities attend mainstream education or participate 
+                    in parts of regular primary education, while others are in a class with only 
+                    Students with disabilities. There are sufficient teachers and support staff 
+                    present in every class. Every student is offered both breakfast and lunch. 
+                    Currently, hard work is being done on a vegetable garden with trees full of fruit. 
+                    The mango and avocado trees are already fully grown. The owner is full of dreams 
+                    about everything she wants to achieve at the school; this school offers your 
+                    child truly amazing opportunities. They have recently started offering lesson 
+                    programs on a tablet. English and math can be learned on this. I was able to 
+                    experience this up close by being present as a volunteer for three weeks. 
+                    This school is in my heart! <br /> God bless you all!&rdquo;
                   </blockquote>
-                  <cite>— James, volunteer since 2019</cite>
+                  <cite>— Gerjanne Bosman</cite>
                 </figure>
               </AnimateOnScroll>
             </div>
@@ -381,7 +420,7 @@ function Home() {
                   <a href="#about">About us</a>
                 </li>
                 <li>
-                  <a href="#programs">Programs</a>
+                  <Link to="/programs">Programs</Link>
                 </li>
                 <li>
                   <a href="#stories">Impact stories</a>
@@ -406,10 +445,16 @@ function Home() {
               <h4>Contact</h4>
               <ul>
                 <li>
-                  <a href="mailto:hello@letmesmile.org">hello@letmesmile.org</a>
+                  <a href="mailto:letmesmilebms@gmail.com">letmesmilebms@gmail.com</a>
                 </li>
                 <li>
-                  <a href="tel:+1234567890">+255 7XXXXXXX</a>
+                  <a href="tel:+255755033573">+255 755 033 573</a>
+                </li>
+                <li>
+                  <a href="tel:+255755953904">+255 755 953 904</a>
+                </li>
+                <li>
+                  <a href="tel:+255628703904">+255 628 703 904</a>
                 </li>
               </ul>
             </div>

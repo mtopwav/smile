@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom';
 import slide47 from '../assets/images/BEAN LIGHT_47.JPG';
 import slide55 from '../assets/images/BEAN LIGHT_55.JPG';
 import logoImg from '../assets/images/logo.png';
+import madamImg from '../assets/images/madam.jpg';
+import urioImg from '../assets/images/urio.jpg';
+import robisonImg from '../assets/images/robison.jpg';
+import sundayImg from '../assets/images/sunday.jpg';
+import SiteSeo from '../components/SiteSeo';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 import SiteHeader from '../components/SiteHeader';
 import './about.css';
@@ -40,9 +45,40 @@ const commitments = [
   'Focus on children affected by poverty and disability',
 ];
 
+const teamMembers = [
+  {
+    name: 'Selina P. Kaaya',
+    role: 'Founder',
+    image: madamImg,
+    featured: true,
+    imageWidth: 800,
+    imageHeight: 1000,
+  },
+  {
+    name: 'Moses E. Urio',
+    role: 'Co-Founder',
+    image: urioImg,
+  },
+  {
+    name: 'Robinson Urio',
+    role: 'Project Manager',
+    image: robisonImg,
+  },
+  {
+    name: 'Sunday Eliwangu',
+    role: 'Secretary General',
+    image: sundayImg,
+  },
+];
+
 function About() {
   return (
     <div className="about">
+      <SiteSeo
+        title="About Us"
+        description="About Let Me Smile — an NGO in Arusha, Tanzania providing inclusive education, Beamlight School, and community outreach."
+        path="/about"
+      />
       <SiteHeader />
 
       <main id="top">
@@ -102,8 +138,8 @@ function About() {
               <article className="about-mission-card">
                 <h3>Mission</h3>
                 <p>
-                  To deliver inclusive education and outreach that restores hope, skills, and
-                  belonging to children and families who have been left behind.
+                  To provide quality education to children by improving learning 
+                  condition and promotion of economic empowerment in the community.
                 </p>
               </article>
             </AnimateOnScroll>
@@ -111,7 +147,7 @@ function About() {
               <article className="about-mission-card">
                 <h3>Vision</h3>
                 <p>
-                  An Arusha—and a world—where every child, regardless of ability or background,
+                  An Arusha and a World where every child, regardless of ability or background,
                   has access to learning, community, and the chance to thrive.
                 </p>
               </article>
@@ -125,6 +161,42 @@ function About() {
                 </p>
               </article>
             </AnimateOnScroll>
+          </div>
+        </div>
+      </section>
+
+      <section className="about-section about-section--white">
+        <div className="about-section__inner">
+          <AnimateOnScroll variant="up" className="about-section__header">
+            <span className="about-label">Our leadership</span>
+            <h2>Meet our team</h2>
+            <p>
+              The people behind Beamlight School and Let Me Smile—dedicated to inclusive
+              education and lasting impact in Arusha.
+            </p>
+          </AnimateOnScroll>
+          <div className="about-team">
+            {teamMembers.map((member) => (
+              <article
+                key={member.name}
+                className={`about-team-card${member.featured ? ' about-team-card--featured' : ''}`}
+              >
+                <div className="about-team-card__photo">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    width={member.imageWidth}
+                    height={member.imageHeight}
+                    decoding="async"
+                    fetchPriority={member.featured ? 'high' : 'auto'}
+                  />
+                </div>
+                <div className="about-team-card__body">
+                  <h3>{member.name}</h3>
+                  <p>{member.role}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -230,7 +302,7 @@ function About() {
                   <Link to="/about">About us</Link>
                 </li>
                 <li>
-                  <Link to="/#programs">Programs</Link>
+                  <Link to="/programs">Programs</Link>
                 </li>
                 <li>
                   <Link to="/#stories">Impact stories</Link>
@@ -255,10 +327,16 @@ function About() {
               <h4>Contact</h4>
               <ul>
                 <li>
-                  <a href="mailto:hello@letmesmile.org">hello@letmesmile.org</a>
+                  <a href="mailto:letmesmilebms@gmail.com">letmesmilebms@gmail.com</a>
                 </li>
                 <li>
-                  <a href="tel:+255000000000">+255 7XX XXX XXX</a>
+                  <a href="tel:+255755033573">+255 755 033 573</a>
+                </li>
+                <li>
+                  <a href="tel:+255755953904">+255 755 953 904</a>
+                </li>
+                <li>
+                  <a href="tel:+255628703904">+255 628 703 904</a>
                 </li>
               </ul>
             </div>
